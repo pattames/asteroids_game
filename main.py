@@ -19,13 +19,11 @@ def main():
         
         # pygame event queue
         for event in pygame.event.get():
-            # If user terminates, exit loop
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT: # If user terminates, exit loop
                 return
         
         screen.fill("black")
-        # Refresh screen
-        pygame.display.flip()
+        pygame.display.flip() # Refresh screen
         dt = clock.tick(60) / 1000
 
 
