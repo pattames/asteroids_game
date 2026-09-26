@@ -9,20 +9,20 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
 
     pygame.init()
-    # New instance of GUI window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SCALED)
 
+    # Game loop
     while True:
         log_state()
         
-        # Start processing pygame event queue
+        # pygame event queue
         for event in pygame.event.get():
-            # If the user terminates the program, exit loop
+            # If user terminates, exit loop
             if event.type == pygame.QUIT:
                 return
         
         screen.fill("black")
-        # Refresh the screen
+        # Refresh screen
         pygame.display.flip()
 
 if __name__ == "__main__":
