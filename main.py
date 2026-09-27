@@ -13,8 +13,8 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SCALED)
     clock = pygame.time.Clock()
-    dt = 0.0 # delta time
-    player = Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)    # Positioned at the middle of the screen
+    dt = 0.0  # delta time
+    player = Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)  # Positioned at the middle of the screen
 
     # Game loop
     while True:
@@ -22,12 +22,12 @@ def main():
         
         # pygame event queue
         for event in pygame.event.get():
-            if event.type == pygame.QUIT: # If user terminates, exit loop
+            if event.type == pygame.QUIT:  # If user terminates, exit loop
                 return
         
         screen.fill("black")
         player.draw(screen)
-        pygame.display.flip() # Refresh screen
+        pygame.display.flip()  # Refresh screen
         dt = clock.tick(60) / 1000
 
 
