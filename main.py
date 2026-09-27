@@ -2,6 +2,7 @@ import pygame
 
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_state
+from player import Player
 
 
 def main():
@@ -13,6 +14,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SCALED)
     clock = pygame.time.Clock()
     dt = 0.0 # delta time
+    player = Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)    # Positioned at the middle of the screen
 
     # Game loop
     while True:
@@ -24,6 +26,7 @@ def main():
                 return
         
         screen.fill("black")
+        player.draw(screen)
         pygame.display.flip() # Refresh screen
         dt = clock.tick(60) / 1000
 
