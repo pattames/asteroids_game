@@ -11,10 +11,14 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
 
     pygame.init()
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SCALED)
     clock = pygame.time.Clock()
     dt = 0.0  # delta time
-    player = Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)  # Positioned at the middle of the screen
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable, drawable)
+    Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)  # Positioned at the middle of the screen
 
     # Game loop
     while True:
@@ -26,8 +30,9 @@ def main():
                 return
         
         screen.fill("black")
-        player.update(dt)
-        player.draw(screen)
+        updatable.update(dt)
+        for sprite in drawable:
+            sprite.draw(screen)
         pygame.display.flip()  # Refresh screen
         dt = clock.tick(60) / 1000
 
