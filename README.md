@@ -1,6 +1,6 @@
 # Instructions
 
-- Move forward with `w`
+- Move forwards with `w`
 - Move backwards with `s`
 - Rotate left with `a`
 - Rotate right with `d`
